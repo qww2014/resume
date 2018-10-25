@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/mn_index.css">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery-1.11.3.js"></script>
+    <title>木鸟短租网</title>
+</head>
+<body>
+    <!-- 顶部栏 -->
+    <div id="top_box">
+        <a href="#" id="backindex">
+            <img src="img/mn_logo.png" alt="图片加载失败">
+        </a>
+        <img src="img/slogan_2015.png" alt="图片加载失败" id="img1">
+        <div id="top_box_d1">
+            <a href="#">首页</a>
+            <a href="#">特色短租</a>
+            <a href="#">发现</a>
+            <a href="#">手机木鸟<img src="img/give88.png" alt="图片加载失败"></a>
+        </div>
+        <script>
+            $("#top_box_d1>a:first-child").addClass("top_box_d1_a-hover");//每页默认选中不一样
+            $("#top_box_d1").on("click","a",function(e){
+                e.preventDefault();
+                var $a=$(e.target);
+                $a.addClass("top_box_d1_a-hover")
+                  .siblings()
+                  .removeClass("top_box_d1_a-hover")
+            })
+        </script>
+        <div id="top_box_d2">
+            <a href="#">免费发布房源</a>
+            <a href="#">登录</a>
+            <label>·</label>
+            <a href="#">注册</a>
+        </div>
+        <div class="modal-bg">
+            <div class="modal-out">
+                <a href="#"><img src="img/index_bzclose.png" alt=""></a>
+                <div class="modal-top">
+                    <a href="#">快捷登录</a>
+                    <a href="#">普通登录</a>
+                </div>
+                <!--<div id="modal-in1">
+                    <span class="input_denglu"></span>
+                    <input type="text" placeholder="手机号">
+                    <span class="input_denglu"></span>
+                    <input type="text" placeholder="图形验证码">
+                    <span  class="input_denglu"></span>
+                    <a href="#"><img src="img/VerifyCode (1).gif" alt=""></a>
+                    <input type="text" placeholder="短信验证码">
+                    <p>获取短信验证码</p>
+                    <a href="#" class="wangji">忘记密码？</a>
+                    <a href="#" class="denglu1"></a>
+                    <p>验证通过即登录，未注册手机号将创建木鸟账号</p>
+                </div>
+            -->
+                <div id="modal-in2">
+                    <span class="input_denglu"></span>
+                    <input type="text" placeholder="邮箱/手机号">
+                    <span class="input_denglu"></span>
+                    <input type="text" placeholder="密码" class="mb-3">
+                    <input type="checkbox" id="denglu">
+                    <span for="denglu" class="my_color999 my_font14">下次自动登录</span>
+                    <a href="#" class="wangji mt-0">忘记密码？</a>
+                    <a href="#" class="denglu1"></a>
+                    <span>还没有木鸟账号？</span><a href="#">立即注册</a>
+                </div>
+                <div class="modal-bottom">
+                    <a href="#"></a>
+                    <a href="#"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 轮播图 -->
+    <div class="lunbotu">
+        <div class="carousel" data-ride="carousel" id="lunbo">
+            <!--轮播的图片-->
+            <div class="carousel-inner d_size">
+                <div class="carousel-item active">
+                    <img src="img/bannar_20180412.jpg" alt="图片加载失败" class="w-100">
+                </div>
+                <div class="carousel-item">
+                    <img src="img/banner2.png" alt="图片加载失败" class="w-100">
+                </div>
+                <div class="carousel-item">
+                    <img src="img/banner3.png" alt="图片加载失败" class="w-100">
+                </div>
+            </div>
+            <!--左右箭头-->
+            <!--
+            <a href="#lunbo" class="jian carousel-control-prev a_left" data-slide="prev"></a>
+            <a href="#lunbo" class="jian carousel-control-next a_right" data-slide="next"></a>
+            -->
+        </div>
+        <!-- 请选择目的地 -->
+        <div class="mudidi d-flex">
+            <div><input class="border-top-0 border-left-0 border-bottom-0 pl-5 input1" type="text" placeholder="请选择目的地"></div>
+            <div><input class="border-0 pl-3 input2" type="text" placeholder="入住时间"></div>
+            <div class="align-self-center">
+                <div class="d_heng"></div>
+            </div>
+            <div><input class="border-top-0 border-left-0 border-bottom-0 pl-3 input2" type="text" placeholder="离开时间"></div>
+            <div><input class="border-0 pl-5" type="text" placeholder="入住人数"></div>
+            <div><a href="#" class="d_a">开始预订</a></div>
+        </div>
+    </div>
+    <!--安全服务卫生-->
+    <div class="bg-white w-100 pt-4 pb-2">
+        <ul class="list-unstyled d-flex justify-content-around w-75 ml-auto mr-auto">
+            <li class="text-center">
+                <img src="img/pc_safe.png" alt="">
+                <p>10万出行意外险/身份证信息互联网核查</p>
+            </li>
+            <li class="text-center border-left border-right li_bor">
+                <img src="img/pc_server.png" alt="">
+                <p>2623位试睡体验师/50万房源实拍验真</p>
+            </li>
+            <li class="text-center">
+                <img src="img/pc_clear.png" alt="">
+                <p>被单每客一换（高品质洗漱用品）/酒店及保洁</p>
+            </li>
+        </ul>
+    </div>
+    <!--文字-->
+    <h3 class="w-100 text-center mt-4 mb-3">寻找你未曾相遇的风景</h3>
+    <h6 class="w-100 text-center">热门城市</h6>
+    <!--三行图片 地区-->
+    <div class="container mt-5">
+        <!--第一行：北京 上海-->
+        <div class="row">
+            <div class="col-8 pr-2">
+                <a href="#" class="bg_city_img1 guding_img1">
+                    <div class="position1">
+                        <h4 class="text-center">北京</h4>
+                        <h6>京戏胡同豆汁酸</h6>
+                    </div>
+                </a>
+            </div>
+            <div class="col-4 pl-1">
+                <a href="#" class="bg_city_img2 guding_img2">
+                    <div class="position1">
+                        <h4 class="text-center">上海</h4>
+                        <h6>吴语 弄堂 城隍庙</h6>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <!--第二行：青岛，北戴河-->
+        <div class="row">
+            <div class="col-4 pr-1">
+                <a href="#" class="bg_city_img3  guding_img2">
+                    <div class="position1">
+                        <h4 class="text-center">青岛</h4>
+                        <h6>啤酒城享别养生活</h6>
+                    </div>
+                </a>
+            </div>
+            <div class="col-8 pl-2">
+                <a href="#" class="bg_city_img4 guding_img1">
+                    <div class="position1">
+                        <h4 class="text-center">北戴河</h4>
+                        <h6>新石器时代的繁衍</h6>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <!--第三行:大连 成都 杭州-->
+        <div class="row">
+            <div class="col-4 pr-1">
+                <a href="#" class="bg_city_img5 guding_img2">
+                    <div class="position1">
+                        <h4 class="text-center">大连</h4>
+                        <h6>酣梦兴游老虎滩</h6>
+                    </div>
+                </a>
+            </div>
+            <div class="col-4 pr-1 pl-2">
+                <a href="#" class="bg_city_img6 guding_img2">
+                    <div class="position1">
+                        <h4 class="text-center">成都</h4>
+                        <h6>宽窄巷子慢生活</h6>
+                    </div>
+                </a>
+            </div>
+            <div class="col-4 pl-2">
+                <a href="#" class="bg_city_img7 guding_img2">
+                    <div class="position1">
+                        <h4 class="text-center">杭州</h4>
+                        <h6>断桥边的千年之恋</h6>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+    <!--为什么在木鸟订房-->
+    <div class="why mt-5 mb-5 pt-4">
+        <h3 class="text-center">为什么在木鸟订房?</h3>
+        <!-验真 保障 安全 地主-->
+        <div class="container">
+            <ul class="list-unstyled d-flex justify-content-around mt-4">
+                <a href="#">
+                    <li class="text-center">
+                        <img src="img/index_bz1.png" alt="" class="mb-3">
+                        <p>房源100%实地验证</p>
+                    </li>
+                </a>
+                <a href="#">
+                    <li class="text-center">
+                        <img src="img/index_bz2.png" alt="" class="mb-3">
+                        <p>付款到木鸟 资金有保障</p>
+                    </li>
+                </a>
+                <a href="#">
+                    <li class="text-center">
+                        <img src="img/index_bz3.png" alt="" class="mb-3">
+                        <p>保障入住人身安全</p>
+                    </li>
+                </a>
+                <a href="#">
+                    <li class="text-center">
+                        <img src="img/index_bz4.png" alt="" class="mb-3">
+                        <p>地主之谊出行无忧</p>
+                    </li>
+                </a>
+            </ul>
+        </div>
+    </div>
+    <!--一处居所 一处情怀-->
+    <div class="w-100 text-center pt-3 jusuo">
+        <h4 class="mb-3">一处居所，一种情怀</h4>
+        <h6 class="my_gray">木鸟特色</h6>
+        <a href="#" class="pt-2 ml-auto mr-auto mt-3">探索更多></a>
+    </div>
+    <!--三组图片 房间类型-->
+    <div class="container mt-5">
+        <!--窑洞 别墅 海景房-->
+        <div class="row">
+            <div class="col-4 pr-2">
+                <a href="#" class="bg_type_img1 guding_img2">
+                    <div class="position2">
+                        <h4>窑洞</h4>
+                        <h6>西北黄土高原上的别样风情</h6>
+                    </div>
+                </a>
+            </div>
+            <div class="col-4 pr-1 pl-1">
+                <a href="#" class="bg_type_img2  guding_img2">
+                    <div class="position2">
+                        <h4>别墅</h4>
+                        <h6>公司年会，开Party，租豪华大别墅</h6>
+                    </div>
+                </a>
+            </div>
+            <div class="col-4 pl-2">
+                <a href="#" class="bg_type_img3  guding_img2">
+                    <div class="position2">
+                        <h4>海景房</h4>
+                        <h6>听海的声音，就在窗外</h6>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <!--主题 情侣 复式-->
+        <div class="row">
+            <div class="col-4 pr-2">
+                <a href="#" class="bg_type_img4 guding_img2">
+                    <div class="position2">
+                        <h4>大连</h4>
+                        <h6>酣梦兴游老虎滩</h6>
+                    </div>
+                </a>
+            </div>
+            <div class="col-4 pr-1 pl-1">
+                <a href="#" class="bg_type_img5 guding_img2">
+                    <div class="position2">
+                        <h4>成都</h4>
+                        <h6>宽窄巷子慢生活</h6>
+                    </div>
+                </a>
+            </div>
+            <div class="col-4 pl-2">
+                <a href="#" class="bg_type_img6 guding_img2">
+                    <div class="position2">
+                        <h4>杭州</h4>
+                        <h6>断桥边的千年之恋</h6>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <!--四合 木屋 古镇-->
+        <div class="row">
+            <div class="col-4 pr-2">
+                <a href="#" class="bg_type_img7 guding_img2">
+                    <div class="position2">
+                        <h4>大连</h4>
+                        <h6>酣梦兴游老虎滩</h6>
+                    </div>
+                </a>
+            </div>
+            <div class="col-4 pr-1 pl-1">
+                <a href="#" class="bg_type_img8 guding_img2">
+                    <div class="position2">
+                        <h4>成都</h4>
+                        <h6>宽窄巷子慢生活</h6>
+                    </div>
+                </a>
+            </div>
+            <div class="col-4 pl-2">
+                <a href="#" class="bg_type_img9 guding_img2">
+                    <div class="position2">
+                        <h4>杭州</h4>
+                        <h6>断桥边的千年之恋</h6>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+    <!--出门在外的一千零一夜-->
+    <div class="w-100 text-center pt-3 jusuo mt-5 mb-4">
+        <h4 class="mb-3">出门在外的一千零一夜</h4>
+        <h6 class="my_gray">木鸟故事</h6>
+        <a href="#" class="pt-2 ml-auto mr-auto mt-3">探索更多></a>
+    </div>
+    <!--超美民宿-->
+    <div class="container mb-5 position-relative">
+        <div class="row" id="d1">
+            <div class="col-8 huantu">
+                <img src="img/dianshi.jpg" alt="图片加载失败" id="image1">
+            </div>
+            <div class="col-4 huantu2 bg-white">
+                <h5 class="text-center pb-2 mt-4">珠江边的一只超美民宿</h5>
+                <p>
+                    广州，又称为“羊城”。和北京、上海一样，这里的地段寸土寸金，是一座许多人挤破头也想混出点儿名堂的地方。外地人觉得大城市的人排外，但事实恰恰相反。一位在广州上过大学的网友说，他第一次坐公交车到烈士陵园去玩，拿着相机对着窗外拍照。那时，有一个老爷爷用非常吃力的拗口普通话热心告诉他好的拍照角度，令他很是感动。要想了解一座城市，并不是只从他人的口中听到，也不是在书中、在电视中看到。实实在在了解一个城市，一…
+                </p>
+                <a href="#" class="xiangqing">[查看详情]</a>
+            </div>
+        </div>
+        <div class="row d-none" id="d2">
+            <div class="col-8 huantu">
+                <img src="img/chuang.jpg" alt="图片加载失败" id="image2">
+            </div>
+            <div class="col-4 huantu2 bg-white">
+                <h5 class="text-center pb-2 mt-4">隐匿在海边的绝美客栈</h5>
+                <p>在很多人的青春里应该都有这样的一个美好愿望，就像海子说的那样“我有一所房子，面朝大海，春暖花开”。五年前刚刚大学毕业的小同陪同学一起去西涌（chōng）游玩，机缘巧合结识了现在的男朋友金奎。因为出于对民宿的生活的向往毅然决然放弃了法国ESMOD的深造机会，留下来跟男朋友一起经营民宿，现在这个拥有14间客房的美丽的三层小楼有个很好听的名字，叫做【潮汐】客栈。小同姐说她和男朋友的第一次相识就是在海边，…
+                </p>
+                <a href="#" class="xiangqing">[查看详情]</a>
+            </div>
+        </div>
+        <div class="row d-none" id="d3">
+            <div class="col-8 huantu">
+                <img src="img/bai.jpg" alt="图片加载失败" id="image3">
+            </div>
+            <div class="col-4 huantu2 bg-white">
+                <h5 class="text-center pb-2 mt-4">90后女孩打造“透明”民…</h5>
+                <p>和很多喜欢旅行的女孩一样，LiLi也喜欢到世界各地去玩儿，迪拜，越南，香港，泰国，她走遍世界的各个角落，尽情肆意地去做自己喜欢与热爱的事情，并和朋友们分享着自己的生活和有趣的体验。LiLi说，她很喜欢分享，分享是让快乐翻倍的事情。一个人的快乐分享给两个人那快乐就变成了双份。LiLi是一个90后天秤座小姐姐。爱旅行爱生活，去过很多城市，也遇到过很多有趣的朋友。LiLi平时比较喜欢养花，听听音乐，工作…
+                </p>
+                <a href="#" class="xiangqing">[查看详情]</a>
+            </div>
+        </div>
+        <div class="row d-none" id="d4">
+            <div class="col-8 huantu">
+                <img src="img/hai.jpg" alt="图片加载失败" id="image4">
+            </div>
+            <div class="col-4 huantu2 bg-white">
+                <h5 class="text-center pb-2 mt-4">海陵岛的一次绝美体验</h5>
+                <p>自己一场旅行，不必在乎目的地，而是旅途中的人和所遇。遇见一望无际的湛蓝大海，尝到鲜嫩便宜的海鲜，碰到可爱细心的民宿老板，体验垂钓和打渔的乐趣，这一切，都让这次旅行不枉此行。8月的旅行，没有了6、7月时候的酷热，也或许是小岛的原因，这里的是清爽的，没有大太阳也没有三四十度的天气，晚上出门要穿外套，睡觉要盖被子，海风吹在脸上还是凉凉的。这里就是位于广东阳江市的海陵岛。海陵岛之前被称为螺洲，又叫螺岛，…
+                </p>
+                <a href="#" class="xiangqing">[查看详情]</a>
+            </div>
+        </div>
+        <div class="row d-none" id="d5">
+            <div class="col-8 huantu">
+                <img src="img/tian.jpg" alt="图片加载失败" id="image5">
+            </div>
+            <div class="col-4 huantu2 bg-white">
+                <h5 class="text-center pb-2 mt-4">东北的绝佳旅游胜地</h5>
+                <p>想到这周终于没有培训了，便准备和闺蜜一起出去走走，闺蜜坦言想去海边了，我看了一下手机地图，去海边的话，大概就只能去葫芦岛转转了。交通从朝阳坐车到葫芦岛，因为提前预定好了民宿，所以直接就打车去了民宿。住宿因为娇娇经常旅游，对出行计划安排什么的也比较在行，所以住宿出行计划什么的就全是娇娇安排的。这次娇娇是在一个叫木鸟短租的小程序上订的一个民宿，房间很温馨，整体呈米黄色，是那种日式的装修，榻榻米，还有像…
+                </p>
+                <a href="#" class="xiangqing">[查看详情]</a>
+            </div>
+        </div>
+        <div class="fangkuai">
+            <a href="#d1" class="mr-2 bg-color_d56" data-toggle="tabs"></a>
+            <a href="#d2" class="mr-2" data-toggle="tabs"></a>
+            <a href="#d3" class="mr-2" data-toggle="tabs"></a>
+            <a href="#d4" class="mr-2" data-toggle="tabs"></a>
+            <a href="#d5" class="mr-2" data-toggle="tabs"></a>
+        </div>
+        <script>
+            $(".fangkuai:has([data-toggle=tabs])").on("click","[data-toggle=tabs]",function(e){
+                e.preventDefault();
+                var $a=$(e.target);
+                var id=$a.attr("href");
+                $(id).removeClass("d-none")
+                    .siblings()
+                    .addClass("d-none");
+                $a.addClass("bg-color_d56")
+                    .siblings()
+                    .removeClass("bg-color_d56")
+                    .parent()
+                    .removeClass("d-none");
+            })
+        </script>
+    </div>
+    <!--旅游资讯-->
+    <div class="container h-275">
+        <div class="row">
+            <div class="col-3">
+                <p class="my_gray">旅游资讯</p>
+            </div>
+            <div class="col-3 text-right">
+                <a href="#" class="my_gray my_font lv-hover">更多旅游资讯>></a>
+            </div>
+            <div class="col-3">
+                <p class="my_gray">最新房源</p>
+            </div>
+            <div class="col-3 text-right a_yuan">
+                <a href="#zuixin1" class="text-center">1</a>
+                <a href="#zuixin2" class="text-center">2</a>
+                <a href="#zuixin3" class="text-center">3</a>
+            </div>
+        </div>
+        <div class="position-relative" id="lvyou1">
+            <img src="img/b1c56c60485646218f1a2126ec2172a520171205155615016.jpg" alt="图片加载失败" class="z_index" id="lvyou1_img1">
+            <img src="img/2015102234254437.jpg" alt="图片加载失败" id="lvyou1_img2">
+            <img src="img/2015102234339797.jpg" alt="图片加载失败" id="lvyou1_img3">
+            <img src="img/2015110240670077.jpg" alt="图片加载失败" id="lvyou1_img4">
+            <img src="img/2015110240755481.jpg" alt="图片加载失败" id="lvyou1_img5">
+        </div>
+        <div class="w-275" id="lvyou2">
+            <a href="#lvyou1_img1" class="mt-2 my_color_fff" data-toggle="tabs">神笔山旅游</a>
+            <a href="#lvyou1_img2" class="mt-4" data-toggle="tabs">阳江海陵岛旅游攻略</a>
+            <a href="#lvyou1_img3" class="mt-4" data-toggle="tabs">苏州周庄古镇旅游</a>
+            <a href="#lvyou1_img4" class="mt-4" data-toggle="tabs">深圳杨梅坑旅游攻略</a>
+            <a href="#lvyou1_img5" class="mt-4" data-toggle="tabs">金佛山旅游</a>
+        </div>
+        <script>
+            $("#lvyou2>a").mouseenter(function(e){
+                var $a=$(e.target);
+                var id=$a.attr("href");
+                $a.addClass("my_color_fff")
+                    .siblings()
+                    .removeClass("my_color_fff");
+                $(id).addClass("z_index")
+                    .siblings()
+                    .removeClass("z_index");
+            })
+        </script>
+        <div id="lvyou3">
+            <div class="zuixin"> 
+                <div id="zuixin1">
+                    <a href="#" class="mr-10">
+                        <img src="img/9cb832db38634d69bb2f14cbceca32d720180906174245039.jpg_414_262.jpg" alt="图片加载失败">
+                        <p class="my_gray my_font14 pl-2 mb-0 mt-2">《偶遇》武昌站/黄鹤楼/财大/美式...</p>
+                        <span class="my_color888 my_font pl-1">武汉-武昌区</span>
+                        <span class="my_color_f30 float-right pr-1">￥268/晚</span>
+                    </a>
+                    <a href="#">
+                        <img src="img/8609df9f6c0a4d6ab87b788efe1ee66720180906174219823.jpg_414_262.jpg" alt="图片加载失败">
+                        <p class="my_gray my_font14 pl-2 mb-0 mt-2">《偶遇》武昌站/黄鹤楼/武大/轻奢...</p>
+                        <span class="my_color888 my_font pl-1">武汉-武昌区</span>
+                        <span class="my_color_f30 float-right pr-1">￥268/晚</span>
+                    </a>
+                </div>
+                <div id="zuixin2">
+                    <a href="#" class="mr-10">
+                        <img src="img/1c9efa6d0c06457c85ae5e289cc276f920180906174830343.jpg_414_262.jpg" alt="图片加载失败">
+                        <p class="my_gray my_font14 pl-2 mb-0 mt-2">基地铁6号线 好房子等你来 单间</p>
+                        <span class="my_color888 my_font pl-1">天津-河北区</span>
+                        <span class="my_color_f30 float-right pr-1">￥100/晚</span>
+                    </a>
+                    <a href="#">
+                        <img src="img/0e832e16265e4ff590bc852938c355f620180906173329518.jpg_414_262.jpg" alt="图片加载失败">
+                        <p class="my_gray my_font14 pl-2 mb-0 mt-2">华润橡左橡右精装公寓 可做饭</p>
+                        <span class="my_color888 my_font pl-1">长春-南关区</span>
+                        <span class="my_color_f30 float-right pr-1">￥268/晚</span>
+                    </a>
+                </div>
+                <div id="zuixin3">
+                    <a href="#" class="mr-10">
+                        <img src="img/4affe8178a734a8b976c676cfe97c08320180906173737321.jpg_414_262.jpg" alt="图片加载失败">
+                        <p class="my_gray my_font14 pl-2 mb-0 mt-2">紧邻地铁回龙观13号线超高性价比大...</p>
+                        <span class="my_color888 my_font pl-1">北京-昌平区</span>
+                        <span class="my_color_f30 float-right pr-1">￥138/晚</span>
+                    </a>
+                    <a href="#">
+                        <img src="img/0425b88febe248839fe266267b045c0620180906173026237.jpg_414_262.jpg" alt="图片加载失败">
+                        <p class="my_gray my_font14 pl-2 mb-0 mt-2">汽车南站东侧 三居室单间</p>
+                        <span class="my_color888 my_font pl-1">桂林-象山区</span>
+                        <span class="my_color_f30 float-right pr-1">￥99/晚</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <script>
+            $("div.a_yuan>a").mouseenter(function(e){
+                var $a=$(e.target);
+                var id=$a.attr("href");
+                $a.addClass("a_yuan_a")
+                  .siblings()
+                  .removeClass("a_yuan_a")
+                if(id=="#zuixin1")
+                    $("div.zuixin").css("top",0);
+                else if(id=="#zuixin2")
+                    $("div.zuixin").css("top",-230);
+                else
+                    $("div.zuixin").css("top",-460);
+            })
+            $("div.a_yuan>a:first-child").mouseenter()
+        </script>
+    </div>
+    <!--底部栏-->
+    <div class="my_bg333 mt-4 before" id="bottom">
+        <!--热门短租-->
+        <div class="bottom-1 clearfix">
+            <p class="float-left my_font14 my_gray mr-5 mb-0">热门短租:</p>
+            <ul id="list1" class="list-w float-left my_font mb-0">
+                <li><a href="#">北京短租房</a></li>
+                <li><a href="#">上海短租房</a></li>
+                <li><a href="#">重庆短租房</a></li>
+                <li><a href="#">天津短租房</a></li>
+                <li><a href="#">青岛短租房</a></li>
+                <li><a href="#">秦皇岛短租房</a></li>
+                <li><a href="#">三亚短租房</a></li>
+                <li><a href="#">大连短租房</a></li>
+                <li><a href="#">威海短租房</a></li>
+                <li><a href="#">日照短租房</a></li>
+                <li><a href="#">烟台短租房</a></li>
+                <li><a href="#">承德短租房</a></li>
+                <li><a href="#">厦门短租房</a></li>
+                <li><a href="#">大理短租房</a></li>
+                <li><a href="#">北海短租房</a></li>
+                <li><a href="#">深圳短租房</a></li>
+                <li><a href="#">沈阳短租房</a></li>
+                <li><a href="#">成都短租房</a></li>
+                <li><a href="#">苏州短租房</a></li>
+                <li><a href="#">杭州短租房</a></li>
+                <li><a href="#">西安短租房</a></li>
+                <li><a href="#">广州短租房</a></li>
+                <li><a href="#">长沙短租房</a></li>
+                <li><a href="#">昆明短租房</a></li>
+                <li><a href="#">南京短租房</a></li>
+                <li><a href="#">武汉短租房</a></li>
+                <li><a href="#">郑州短租房</a></li>
+                <li><a href="#">石家庄短租房</a></li>
+                <li><a href="#">无锡短租房</a></li>
+                <li><a href="#">哈尔滨短租房</a></li>
+                <li><a href="#">南昌短租房</a></li>
+                <li><a href="#">海口短租房</a></li>
+                <li><a href="#">黄山短租房</a></li>
+                <li><a href="#">珠海短租房</a></li>
+                <li><a href="#">宁波短租房</a></li>
+                <li><a href="#">长春短租房</a></li>
+                <li><a href="#">扬州短租房</a></li>
+                <li><a href="#">唐山短租房</a></li>
+                <li><a href="#">葫芦岛短租房</a></li>
+                <li><a href="#">泰安短租房</a></li>
+                <li><a href="#">贵阳短租房</a></li>
+                <li><a href="#">桂林短租房</a></li>
+                <li><a href="#">湘西短租房</a></li>
+                <li><a href="#">合肥短租房</a></li>
+                <li><a href="#">晋中短租房</a></li>
+                <li><a href="#">西宁短租房</a></li>
+                <li><a href="#">福州短租房</a></li>
+                <li><a href="#">保定短租房</a></li>
+                <li><a href="#">福山短租房</a></li>
+                <li><a href="#">东莞短租房</a></li>
+            </ul>
+            <p id="zhankai1" class="float-left my_font14 my_gray zk mb-0">+展开</p>
+            <script>
+                $("#list1>li:gt(13)").hide();
+                //为id="zhankai1"绑定单击事件:
+                $("#zhankai1").click(function(){
+                    //如果ul#list下有隐藏的元素，就显示全部
+                    if($("#list1").is(":has(:hidden)")){
+                        $("#list1>li").show()
+                    //顺便改当前内容为"-收起"
+                        $("#zhankai1").html("-收起")
+                    }else{
+                    //否则,隐藏14以上
+                        $("#list1>li:gt(13)").hide();
+                    //顺便改当前内容为"+展开"
+                        $("#zhankai1").html("+展开")
+                    }
+                })
+            </script>
+        </div>
+        <!--热门公寓推荐-->
+        <div class="bottom-1 mt-0 clearfix">
+            <p class="float-left my_font14 my_gray mr-5 mb-0">热门公寓推荐:</p>
+            <ul id="list2" class="list-w float-left my_font mb-0">
+                <li><a href="#">珠海短租房公寓</a></li>
+                <li><a href="#">中山短租房公寓</a></li>
+                <li><a href="#">郑州短租房公寓</a></li>
+                <li><a href="#">张家界短租房公寓</a></li>
+                <li><a href="#">西双版纳短租房公寓</a></li>
+                <li><a href="#">西宁短租房公寓</a></li>
+                <li><a href="#">香港短租房公寓</a></li>
+                <li><a href="#">西安短租房公寓</a></li>
+                <li><a href="#">厦门短租房公寓</a></li>
+                <li><a href="#">无锡短租房公寓</a></li>
+                <li><a href="#">武汉短租房公寓</a></li>
+                <li><a href="#">威海短租房公寓</a></li>
+                <li><a href="#">天津短租房公寓</a></li>
+                <li><a href="#">太原短租房公寓</a></li>
+                <li><a href="#">苏州短租房公寓</a></li>
+                <li><a href="#">石家庄短租房公寓</a></li>
+                <li><a href="#">深圳短租房公寓</a></li>
+                <li><a href="#">沈阳短租房公寓</a></li>
+                <li><a href="#">上海短租房公寓</a></li>
+                <li><a href="#">三亚短租房公寓</a></li>
+                <li><a href="#">日照短租房公寓</a></li>
+                <li><a href="#">青岛短租房公寓</a></li>
+                <li><a href="#">盘锦短租房公寓</a></li>
+                <li><a href="#">宁波短租房公寓</a></li>
+                <li><a href="#">南宁短租房公寓</a></li>
+                <li><a href="#">南京短租房公寓</a></li>
+                <li><a href="#">南戴河短租房公寓</a></li>
+                <li><a href="#">南昌短租房公寓</a></li>
+                <li><a href="#">洛阳短租房公寓</a></li>
+                <li><a href="#">兰州短租房公寓</a></li>
+                <li><a href="#">昆明短租房公寓</a></li>
+                <li><a href="#">济南短租房公寓</a></li>
+                <li><a href="#">吉林短租房公寓</a></li>
+                <li><a href="#">葫芦岛短租房公寓</a></li>
+                <li><a href="#">惠州短租房公寓</a></li>
+                <li><a href="#">呼和浩特短租房公寓</a></li>
+                <li><a href="#">黄山短租房公寓</a></li>
+                <li><a href="#">合肥短租房公寓</a></li>
+                <li><a href="#">海口短租房公寓</a></li>
+                <li><a href="#">哈尔滨短租房公寓</a></li>
+                <li><a href="#">贵阳短租房公寓</a></li>
+                <li><a href="#">桂林短租房公寓</a></li>
+                <li><a href="#">广州短租房公寓</a></li>
+                <li><a href="#">大连短租房公寓</a></li>
+                <li><a href="#">重庆短租房公寓</a></li>
+                <li><a href="#">成都短租房公寓</a></li>
+                <li><a href="#">常州短租房公寓</a></li>
+                <li><a href="#">长春短租房公寓</a></li>
+                <li><a href="#">北京短租房公寓</a></li>
+                <li><a href="#">北海短租房公寓</a></li>
+                <li><a href="#">北戴河短租房公寓</a></li>
+                <li><a href="#">保定短租房公寓</a></li>
+                <li><a href="#">营口短租房公寓</a></li>
+                <li><a href="#">秦皇岛短租房公寓</a></li>
+                <li><a href="#">昆山短租房公寓</a></li>
+                <li><a href="#">杭州短租房公寓</a></li>
+                <li><a href="#">长沙短租房公寓</a></li>
+                <li><a href="#">佛山短租房公寓</a></li>
+                <li><a href="#">大同短租房公寓</a></li>
+                <li><a href="#">泉州短租房公寓</a></li>
+            </ul>
+            <p id="zhankai2" class="float-left my_font14 my_gray zk">+展开</p>
+            <script>
+                $("#list2>li:gt(9)").hide();
+                //为id="zhankai1"绑定单击事件:
+                $("#zhankai2").click(function(){
+                    //如果ul#list下有隐藏的元素，就显示全部
+                    if($("#list2").is(":has(:hidden)")){
+                        $("#list2>li").show()
+                        //顺便改当前内容为"-收起"
+                        $("#zhankai2").html("-收起")
+                    }else{
+                        //否则,隐藏14以上
+                        $("#list2>li:gt(9)").hide();
+                        //顺便改当前内容为"+展开"
+                        $("#zhankai2").html("+展开")
+                    }
+                })
+            </script>
+        </div>
+        <!--友情链接-->
+        <div class="bottom-1 mt-0 clearfix">
+            <p class="float-left my_font14 my_gray mr-5 mb-0">友情链接:</p>
+            <ul id="list3" class="list-w float-left my_font mb-0">
+                <li><a href="#">火车票资讯</a></li>
+                <li><a href="#">成都租房</a></li>
+                <li><a href="#">找房子</a></li>
+                <li><a href="#">汽车时刻表查询</a></li>
+                <li><a href="#">太仓房产网</a></li>
+                <li><a href="#">酒店预订网</a></li>
+                <li><a href="#">装修网</a></li>
+                <li><a href="#">旅游攻略</a></li>
+                <li><a href="#">景点门票</a></li>
+                <li><a href="#">九寨沟旅游</a></li>
+                <li><a href="#">台湾旅游</a></li>
+                <li><a href="#">装修</a></li>
+                <li><a href="#">海外房产</a></li>
+                <li><a href="#">广州房产网</a></li>
+                <li><a href="#">装修网</a></li>
+                <li><a href="#">招标采购</a></li>
+                <li><a href="#">租房网</a></li>
+                <li><a href="#">装修设计</a></li>
+                <li><a href="#">深圳房产</a></li>
+                <li><a href="#">北戴河家庭旅馆</a></li>
+                <li><a href="#">北戴河刘庄家庭旅馆</a></li>
+                <li><a href="#">重庆旅行社</a></li>
+                <li><a href="#">地图查询</a></li>
+                <li><a href="#">房产纠纷律师</a></li>
+            </ul>
+            <p id="zhankai3" class="float-left my_font14 my_gray zk">+展开</p>
+            <script>
+                $("#list3>li:gt(15)").hide();
+                //为id="zhankai1"绑定单击事件:
+                $("#zhankai3").click(function(){
+                    //如果ul#list下有隐藏的元素，就显示全部
+                    if($("#list3").is(":has(:hidden)")){
+                        $("#list3>li").show()
+                        //顺便改当前内容为"-收起"
+                        $("#zhankai3").html("-收起")
+                    }else{
+                        //否则,隐藏14以上
+                        $("#list3>li:gt(15)").hide();
+                        //顺便改当前内容为"+展开"
+                        $("#zhankai3").html("+展开")
+                    }
+                })
+            </script>
+        </div>
+        <!--免责声明-->
+        <div id="bottom2">
+            <div class="text-center">
+                <a href="#">免责声明</a>
+                <span>|</span>
+                <a href="#">关于我们</a>
+                <span>|</span>
+                <a href="#">联系我们</a>
+                <span>|</span>
+                <a href="#">法律声明</a>
+                <span>|</span>
+                <a href="#">新手指南</a>
+                <span>|</span>
+                <a href="#">帮助中心</a>
+                <span>|</span>
+                <a href="#">短租房</a>
+                <span>|</span>
+                <a href="#">新闻资讯</a>
+                <span>|</span>
+                <a href="#">媒体报道</a>
+                <p class="my_color888 my_font14 mb-0">
+                    客服电话：400-056-0055 或 010-89180879 &nbsp; 客户服务：service@muniao.com &nbsp; 意见反馈：feedback@muniao.com
+                </p>
+                <span class="my_font14">网站备案/许可证号：京ICP备12043553号-3 京公网安备11010802011855号 </span>
+                <a href="#"> 营业执照编号 104555056 </a>
+                <span class="my_font14"> 北京爱游易科技有限公司</span><br>
+                <a href="#"><img src="img/pic1.jpg" alt="图片加载失败"></a>
+                <a href="#"><img src="img/pic2.jpg" alt="图片加载失败"></a>
+                <a href="#"><img src="img/pic3.jpg" alt="图片加载失败"></a>
+                <a href="#"><img src="img/pic6.jpg" alt="图片加载失败"></a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
