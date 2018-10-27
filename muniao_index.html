@@ -35,49 +35,80 @@
             })
         </script>
         <div id="top_box_d2">
-            <a href="#">免费发布房源</a>
-            <a href="#">登录</a>
+            <a href="#modal-bg">免费发布房源</a>
+            <a href="#modal-bg">登录</a>
             <label>·</label>
             <a href="#">注册</a>
         </div>
-        <div class="modal-bg">
+        <script>
+            $("#top_box_d2").on("click","a",function(e){
+                e.preventDefault();
+                var $a=$(e.target);
+                var id=$a.attr("href");
+                $(id).show()
+            })
+        </script>
+        <div class="modal-bg" id="modal-bg">
             <div class="modal-out">
-                <a href="#"><img src="img/index_bzclose.png" alt=""></a>
+                <a href="#modal-bg" id="close"><img src="img/index_bzclose.png" alt=""></a>
                 <div class="modal-top">
-                    <a href="#">快捷登录</a>
-                    <a href="#">普通登录</a>
+                    <a href="#modal-in1">快捷登录</a>
+                    <a href="#modal-in2">普通登录</a>
                 </div>
-                <!--<div id="modal-in1">
-                    <span class="input_denglu"></span>
-                    <input type="text" placeholder="手机号">
-                    <span class="input_denglu"></span>
-                    <input type="text" placeholder="图形验证码">
-                    <span  class="input_denglu"></span>
-                    <a href="#"><img src="img/VerifyCode (1).gif" alt=""></a>
-                    <input type="text" placeholder="短信验证码">
-                    <p>获取短信验证码</p>
-                    <a href="#" class="wangji">忘记密码？</a>
-                    <a href="#" class="denglu1"></a>
-                    <p>验证通过即登录，未注册手机号将创建木鸟账号</p>
+                <div>
+                    <div id="modal-in1">
+                        <span class="input_denglu"></span>
+                        <input type="text" placeholder="手机号">
+                        <span class="input_denglu"></span>
+                        <input type="text" placeholder="图形验证码">
+                        <span  class="input_denglu"></span>
+                        <a href="#"><img src="img/VerifyCode (1).gif" alt=""></a>
+                        <input type="text" placeholder="短信验证码">
+                        <p>获取短信验证码</p>
+                        <a href="#" class="wangji">忘记密码？</a>
+                        <a href="#" class="denglu1"></a>
+                        <p>验证通过即登录，未注册手机号将创建木鸟账号</p>
+                    </div>
+                    <div id="modal-in2" class="mb-3">
+                        <span class="input_denglu"></span>
+                        <input type="text" placeholder="邮箱/手机号">
+                        <span class="input_denglu"></span>
+                        <input type="text" placeholder="密码" class="mb-3">
+                        <input type="checkbox" id="denglu">
+                        <span for="denglu" class="my_color999 my_font14">下次自动登录</span>
+                        <a href="#" class="wangji mt-0">忘记密码？</a>
+                        <a href="#" class="denglu1 mb-3"></a>
+                        <span class="my_font14 my_color999">还没有木鸟账号？<a href="#" class="my_font14 my_colore71">立即注册</a></span>
+                    </div>
                 </div>
-            -->
-                <div id="modal-in2">
-                    <span class="input_denglu"></span>
-                    <input type="text" placeholder="邮箱/手机号">
-                    <span class="input_denglu"></span>
-                    <input type="text" placeholder="密码" class="mb-3">
-                    <input type="checkbox" id="denglu">
-                    <span for="denglu" class="my_color999 my_font14">下次自动登录</span>
-                    <a href="#" class="wangji mt-0">忘记密码？</a>
-                    <a href="#" class="denglu1"></a>
-                    <span>还没有木鸟账号？</span><a href="#">立即注册</a>
-                </div>
+                <script>
+                    $("#modal-in2").hide();
+                    $("div.modal-top>a:first-child").addClass("border-b");
+                    $("div.modal-top").on("click","a",function(e){
+                        e.preventDefault();
+                        var $a=$(e.target);
+                        var id=$a.attr("href");
+                        $a.addClass("border-b")
+                          .siblings()
+                          .removeClass("border-b")
+                        $(id).show()
+                           .siblings()
+                           .hide()
+                    })
+                </script>
                 <div class="modal-bottom">
                     <a href="#"></a>
                     <a href="#"></a>
                 </div>
             </div>
         </div>
+        <script>
+            $("#close").on("click",function(){
+                var $a=$(this);
+                var id=$a.attr("href");
+                $(id).hide()
+            })
+        </script>
     </div>
     <!-- 轮播图 -->
     <div class="lunbotu">
@@ -436,19 +467,19 @@
             <img src="img/2015110240755481.jpg" alt="图片加载失败" id="lvyou1_img5">
         </div>
         <div class="w-275" id="lvyou2">
-            <a href="#lvyou1_img1" class="mt-2 my_color_fff" data-toggle="tabs">神笔山旅游</a>
-            <a href="#lvyou1_img2" class="mt-4" data-toggle="tabs">阳江海陵岛旅游攻略</a>
-            <a href="#lvyou1_img3" class="mt-4" data-toggle="tabs">苏州周庄古镇旅游</a>
-            <a href="#lvyou1_img4" class="mt-4" data-toggle="tabs">深圳杨梅坑旅游攻略</a>
-            <a href="#lvyou1_img5" class="mt-4" data-toggle="tabs">金佛山旅游</a>
+            <a href="#lvyou1_img1" class="my_color_fff bg-img" data-toggle="tabs">神笔山旅游</a>
+            <a href="#lvyou1_img2" data-toggle="tabs">阳江海陵岛旅游攻略</a>
+            <a href="#lvyou1_img3" data-toggle="tabs">苏州周庄古镇旅游</a>
+            <a href="#lvyou1_img4" data-toggle="tabs">深圳杨梅坑旅游攻略</a>
+            <a href="#lvyou1_img5" data-toggle="tabs">金佛山旅游</a>
         </div>
         <script>
             $("#lvyou2>a").mouseenter(function(e){
                 var $a=$(e.target);
                 var id=$a.attr("href");
-                $a.addClass("my_color_fff")
+                $a.addClass("my_color_fff bg-img")
                     .siblings()
-                    .removeClass("my_color_fff");
+                    .removeClass("my_color_fff bg-img");
                 $(id).addClass("z_index")
                     .siblings()
                     .removeClass("z_index");
@@ -757,6 +788,43 @@
                 <a href="#"><img src="img/pic6.jpg" alt="图片加载失败"></a>
             </div>
         </div>
+    </div>
+    <!-- 88元现金 -->
+    <div>
+        <div id="left88">
+            <img src="img/left_down_bot.png" alt="">
+        </div>
+        <script>
+            window.onscroll=function(){
+                var scroll=document.documentElement.scrollTop;
+                if(scroll>=400){
+                    document.getElementById("left88").style.display="block";
+                }else{
+                    document.getElementById("left88").style.display="none";
+                }
+            }
+        </script>
+        <div id="bottom88">
+            <img src="img/newdownapp.png" alt="">
+            <div id="erweima">
+                <img src="img/fkappewm.png" alt="">
+                <div>
+                    <b>扫描下载APP</b>
+                    <a href="#">IOS下载</a>
+                    <a href="#">Android下载</a>
+                </div>
+            </div>
+            <a href="#bottom88" id="close1">
+                <img src="img/close_down.png" alt="">
+            </a>
+        </div>
+        <script>
+            $("#close1").on("click",function(){
+                var $a=$(this);
+                var id=$a.attr("href");
+                $(id).css("right","-1900px")
+            })
+        </script>
     </div>
 </body>
 </html>
