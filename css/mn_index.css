@@ -108,6 +108,7 @@ body{
     height: 100%;
     z-index: 9999;
     position: fixed;
+    display: none;
 }
 div.modal-out{
     position: absolute;
@@ -115,7 +116,6 @@ div.modal-out{
     left: 40%;
     top: 25%;
     width: 380px;
-    height: 500px;
     padding: 0 50px;
     border-radius: 3px;
     box-shadow: 0 0 8px 1px rgba(0, 0, 0, .24)
@@ -127,22 +127,18 @@ div.modal-out>a{
     filter: grayscale(100%);
 }
 div.modal-top{
-    margin:30px 35px 0 35px;
+    margin:30px 35px 10px 35px;
 }
 div.modal-top>a{
     display: inline-block;
     font-size:18px;
     color: #777;
     line-height: 30px;
-    padding: 15px;
+    margin: 0 15px 0 15px;
 }
-/*
-div.modal-bottom{
-    position: absolute;
-    left: 50px;
-    bottom:10px;
+.border-b{
+    border-bottom: 2px solid #ff9180;
 }
-*/
 #modal-in1>input{
     width: 100%;
     height: 40px;
@@ -171,14 +167,14 @@ div.modal-bottom{
 #modal-in1>a:nth-child(6){
     position: absolute;
     right: 55px;
-    top:180px;
+    top:162px;
 }
 #modal-in1>p:nth-child(8){
     cursor: pointer;
     position: absolute;
     line-height: 40px;
     right: 60px;
-    top:240px;
+    top:222px;
     font-size: 14px;
     color: #fe7e71;
 }
@@ -187,6 +183,9 @@ div.modal-bottom{
     float: right;
     font-size: 14px;
     margin-top: 10px;
+    color: #fe7e71;
+}
+.my_colore71{
     color: #fe7e71;
 }
 #modal-in1 a.denglu1,#modal-in2 a.denglu1{
@@ -224,6 +223,7 @@ div.modal-bottom>a{
     display: inline-block;
     width: 28px;
     height: 23px; 
+    margin-bottom: 15px;
 }
 div.modal-bottom>a:first-child{
     background: url(../img/login_icon.png) no-repeat 0 -25px;
@@ -355,7 +355,7 @@ div.col-8{
 .why{
     width: 100%;
     height: 280px;
-    background: #0aa1ed;
+    background: url(../img/s_mn_ad_bg.jpg) repeat;
 }
 .why h3,.why p{
     color: #fff;
@@ -482,14 +482,25 @@ div.fangkuai a:hover{
     background: #f30 !important;
     color: #fff !important;
 }
+#lvyou1{
+    left: -20px;
+}
 #lvyou1 img{
     position: absolute;
     width: 290px;
     height: 230px;
 }
 #lvyou2 a{
+    z-index: 11;
+    padding-left: 20px;
+    font-size: 14px;
+    line-height: 46px;
+    background: url(../img/s_mn_inf_list_abg.png) no-repeat 0 -46px;
     display: block;
     color: #555;
+}
+.bg-img{
+    background: url(../img/s_mn_inf_list_abg.png) no-repeat !important;
 }
 .z_index{
     z-index: 10;
@@ -506,15 +517,16 @@ div.fangkuai a:hover{
 #lvyou2,#lvyou3{
     display: inline-block;
     position: absolute;
-    right: 375px;
 }
 #lvyou3{
     width: 580px;
     height: 230px;
     overflow: hidden;
+    right: 360px;
 }
 #lvyou2{
-    left: 697px;
+    z-index: 11;
+    left: 658px;
 }
 .zuixin{
     position:absolute;
@@ -609,4 +621,59 @@ div.fangkuai a:hover{
 }
 #bottom2 img{
     margin: 30px 20px;
+}
+/* 88元现金 */
+#left88{
+    z-index: 50;
+    cursor: pointer;
+    display: none;
+    position: fixed;
+    bottom: 250px;;
+}
+#bottom88{
+    z-index: 50;
+    width: 100%;
+    height: 168px;
+    background: rgba(0, 0, 0, .7);
+    position: fixed;
+    bottom: 0;
+}
+#bottom88>img{
+    position: absolute;
+    bottom: 25px;
+    left: 365px;
+}
+#bottom88 a img{
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 350px;
+}
+#erweima{
+    background: #11172e;
+    width: 375px;
+    height: 100%;
+    position: absolute;
+    right: 425px;
+    padding: 25px 35px;
+}
+#erweima>div{
+    display: inline-block;
+    position: absolute;
+    right: 60px;;
+}
+#erweima b{
+    color: #fff;
+    display: block;
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+#erweima a{
+    display: block;
+    border: 1px solid #fff;
+    color: #fff;
+    text-align: center;
+    line-height: 28px;
+    border-radius: 14px;
+    margin-bottom: 12px;
 }
