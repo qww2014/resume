@@ -461,10 +461,10 @@
         </div>
         <div class="position-relative" id="lvyou1">
             <img src="img/b1c56c60485646218f1a2126ec2172a520171205155615016.jpg" alt="图片加载失败" class="z_index" id="lvyou1_img1">
-            <img src="img/2015102234254437.jpg" alt="图片加载失败" id="lvyou1_img2">
-            <img src="img/2015102234339797.jpg" alt="图片加载失败" id="lvyou1_img3">
-            <img src="img/2015110240670077.jpg" alt="图片加载失败" id="lvyou1_img4">
-            <img src="img/2015110240755481.jpg" alt="图片加载失败" id="lvyou1_img5">
+            <img src="img/e3a76032ac3c4d419d1d24c1e45187a920171204110720016.jpg" alt="图片加载失败" id="lvyou1_img2">
+            <img src="img/06016ddd4e9d478c81ad4fceb33ee85620171201104832032.jpg" alt="图片加载失败" id="lvyou1_img3">
+            <img src="img/7cfdb0f7847648d199f259f8515c4e5d20171130110830172.jpg" alt="图片加载失败" id="lvyou1_img4">
+            <img src="img/9c80496d01184a9f81c32bbb09f0bf3920171129110138422.jpg" alt="图片加载失败" id="lvyou1_img5">
         </div>
         <div class="w-275" id="lvyou2">
             <a href="#lvyou1_img1" class="my_color_fff bg-img" data-toggle="tabs">神笔山旅游</a>
@@ -791,19 +791,6 @@
     </div>
     <!-- 88元现金 -->
     <div>
-        <div id="left88">
-            <img src="img/left_down_bot.png" alt="">
-        </div>
-        <script>
-            window.onscroll=function(){
-                var scroll=document.documentElement.scrollTop;
-                if(scroll>=400){
-                    document.getElementById("left88").style.display="block";
-                }else{
-                    document.getElementById("left88").style.display="none";
-                }
-            }
-        </script>
         <div id="bottom88">
             <img src="img/newdownapp.png" alt="">
             <div id="erweima">
@@ -818,13 +805,86 @@
                 <img src="img/close_down.png" alt="">
             </a>
         </div>
+        <div id="left88">
+            <img src="img/left_down_bot.png" alt="">
+        </div>
         <script>
-            $("#close1").on("click",function(){
-                var $a=$(this);
-                var id=$a.attr("href");
-                $(id).css("right","-1900px")
-            })
+                $("#left88").on("click",function(){
+                    var $a=$(this);
+                    $a.animate({left:-120},500)
+                      .siblings()
+                      .animate({right:0},500)
+                })
         </script>
+    </div>
+    <!-- 在线客服-->
+    <div>
+        <ul id="kefu">
+            <li><a href="#zaixian"><img src="img/mumu.png" alt=""></a></li>
+            <li><a href="#dingdan"></a></li>
+            <li><a href="#linkma"></a></li>
+            <li><a href="#fankui"></a></li>
+            <li><a href="#"></a></li>
+        </ul>
+            <script>
+                window.onscroll=function(){
+                    var scroll=document.documentElement.scrollTop;
+                    if(scroll>=400){
+                        $("#bottom88").show();
+                        $("#kefu>li:last-child").css("display","block");
+                    }else{
+                        $("#bottom88").hide();
+                        $("#kefu>li:last-child").hide();
+                    }
+                }
+                window.onscroll();
+                $("#close1").on("click",function(){
+                    var $a=$(this);
+                    var id=$a.attr("href");
+                    $(id).animate({right:1903},500)
+                            .siblings()
+                            .animate({left:0},500)
+                })
+            </script>
+            <div id="hover">
+                <div id="zaixian">
+                        在<br>线<br>客<br>服
+                    </div>
+                    <div id="dingdan">
+                        <h3>我的订单</h3>
+                        <p>查看您的近期订单</p>
+                        <a href="#">点击查看</a>
+                    </div>
+                    <div id="linkma">
+                        <img src="img/index_linkma.png" alt="">
+                    </div>
+                    <div id="fankui">
+                        <h3>问题反馈</h3>
+                        <p>
+                            请将您的问题告诉我们，
+                            <br>
+                            我们将更好的为您服务。
+                        </p>
+                        <a href="#">点击反馈</a>
+                    </div>
+            </div>
+                <script>
+                    $("#hover>div").hide();
+                    var timer=null;
+                    $("#kefu>li>a").mouseenter(function(){
+                        var id=$(this).attr("href");
+                        $(id).show()
+                            .siblings()
+                            .hide()
+                        clearTimeout(timer)
+                    });
+                    $("#kefu>li>a").mouseleave(function(){
+                        var id=$(this).attr("href");
+                            timer=setTimeout(function(){
+                                $("#hover>div").hide();
+                            },1000)
+                    })
+            </script>
     </div>
 </body>
 </html>
